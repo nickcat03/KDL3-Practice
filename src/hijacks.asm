@@ -1,0 +1,4 @@
+ORG $009490
+    JSL $01BC74
+    NOP
+    NOP
