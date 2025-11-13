@@ -16,6 +16,20 @@ ORG $08BC6A
 ORG $00B87E
     db $01
 
+; Disable Pausing because it conflicts with other stuff and it could be annoying
+; BEQ -> BRA
+ORG $0094E5
+    db $80
+; Always have Start as pause (even with pause debug option enabled)
+ORG $0281AB
+    db $80
+; Rename PAUSE to UTILS in Debug Menu
+ORG $029BBE
+    db "UTILS"
+
+; Debug for transitioning rooms
+;ORG $01A9FA
+
 ; Debug Text Edit
 ORG $028000
     db "AERO PRAC 11/2025"
