@@ -1,87 +1,8 @@
 ORG $01BC74
+cpu_code:
     ; Leftover from hijack, don't touch
     INC $602C
     BIT $6002
-
-    REP #$20
-    AbilitySelect:
-        LDA !p1hold_BYsSudlrAXLR
-        AND       #%0000000000010000
-        ORA $6038
-        CMP       #%0000100000010000
-        BNE +
-        LDA #$0100
-        STA $54A8
-        + CMP #$0110
-        BNE +
-        LDA #$0500
-        STA $54A8
-        + CMP #$0410
-        BNE +
-        LDA #$0200
-        STA $54A8
-        + CMP #$0210
-        BNE +
-        LDA #$0600
-        STA $54A8
-        + LDA !p1hold_BYsSudlrAXLR
-        AND #$0030
-        ORA $6038
-        CMP #$0830
-        BNE +
-        LDA #$0300
-        STA $54A8
-        + CMP #$0130
-        BNE +
-        LDA #$0400
-        STA $54A8
-        + CMP #$0430
-        BNE +
-        LDA #$0700
-        STA $54A8
-        + CMP #$0230
-        BNE +
-        LDA #$0800
-        STA $54A8
-        + LDA !p2hold_BYsSudlrAXLR
-        AND #$0010
-        ORA $603A
-        + CMP #$0810
-        BNE +
-        LDA #$0100
-        STA $54AA
-        + CMP #$0110
-        BNE +
-        LDA #$0500
-        STA $54AA
-        + CMP #$0410
-        BNE +
-        LDA #$0200
-        STA $54AA
-        + CMP #$0210
-        BNE +
-        LDA #$0600
-        STA $54AA
-        + LDA !p2hold_BYsSudlrAXLR
-        AND #$0030
-        ORA $603A
-        CMP #$0830
-        BNE +
-        LDA #$0300
-        STA $54AA
-        + CMP #$0130
-        BNE +
-        LDA #$0400
-        STA $54AA
-        + CMP #$0430
-        BNE +
-        LDA #$0700
-        STA $54AA
-        + CMP #$0230
-        BNE +
-        LDA #$0800
-        STA $54AA
-        +
 
     SEP #$20
     changeAnimalFriends1:
@@ -150,5 +71,5 @@ ORG $01BC74
         
         +
 
-    SEP #$20
-    RTL
+SEP #$20
+RTL

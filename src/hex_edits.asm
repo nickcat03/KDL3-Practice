@@ -1,14 +1,28 @@
 ; Set lives to 99
-ORG $00BA77
-    LDA #$0064
+; Commented out because this can just be done in Debug Menu
+;ORG $00BA77
+;    LDA #$0064
 ; Stop lives from decreasing
 ORG $08BC6A
     RTL
 
 ; Skip intro and jump directly to title screen
 ; write BRA $C10077 to jump to file select load and skip opening 
-ORG $028038
-    db $80, $3D
+; commenting out because then you can't enable Debug Mode
+;ORG $028038
+;    db $80, $3D
+
+; Enable Debug Mode
+ORG $00B87E
+    db $01
+
+; Debug Text Edit
+ORG $028000
+    db "AERO PRAC 11/2025"
+
+; Always show Debug Text (instead of needing to hold L+R to see it)
+ORG $028F8F
+    LDA #$0030
 
 ; Unlock all options (visual)
 ORG $018DB6

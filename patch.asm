@@ -16,7 +16,9 @@ incsrc "src/hijacks.asm"
 ; All of these are ran together because they are all going to be placed in the blank space in ROM
 ORG $00F140
 incsrc "src/cpu.asm"
+incsrc "src/nmi.asm"
 ;incsrc "src/sa1.asm"
+incsrc "src/qsql.asm"
 
 ; make sure the ROM is expanded to the full 1MBit
 ORG !_F+$1FFFFF
