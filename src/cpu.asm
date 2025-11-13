@@ -85,7 +85,7 @@ ORG $01BC74
 
     SEP #$20
     changeAnimalFriends1:
-        LDA $72E2
+        LDA $72E0
         ORA $6034
         CMP #$24
         BNE .end
@@ -110,7 +110,7 @@ ORG $01BC74
         .end:
 
     changeAnimalFriends2:
-        LDA $72E2
+        LDA $72E0
         ORA $6034
         CMP #$14
         BNE .end
